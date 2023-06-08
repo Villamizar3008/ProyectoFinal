@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gestión de Ventas de Tiquetes Presencial</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/gestionVtiquetes.css">
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Gestión de Ventas de Tiquetes Presencial</h1>
+
+    <div class="form-container">
+      <h2>Agregar Venta de Tiquetes Presencial</h2>
+      <form id="venta-presencial-form">
+        <div class="form-group">
+          <label for="sala-presencial">Sala:</label>
+          <select id="pelicula" name="pelicula">
+            <option value="Sala 1">Sala 1</option>
+            <option value="Sala 2">Sala 2</option>
+            <option value="Sala 3">Sala 3</option>
+        </select><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="horario-presencial">Horario:</label>
+          <input type="time" id="horario-presencial" required>
+        </div>
+
+        <div class="form-group">
+          <label for="numero-tiquetes-presencial">Número de Tiquetes:</label>
+          <input type="number" id="numero-tiquetes-presencial" required>
+        </div>
+
+        <div class="form-group">
+          <label for="posiciones-presencial">Posiciones:</label>
+          <input type="text" id="posiciones-presencial" required>
+        </div>
+
+        <div class="form-group">
+          <label for="forma-pago-presencial">Forma de Pago:</label>
+          <input type="text" id="forma-pago-presencial" required>
+        </div>
+
+        <div class="form-group">
+          <label for="vendedor-presencial">Vendedor:</label>
+          <input type="text" id="vendedor-presencial" required>
+        </div>
+
+        <button type="submit">Agregar</button>
+        <button class="back-button" onclick="window.history.back()">Volver</button>
+
+      </form>
+    </div>
+
+    <div class="venta-list">
+      <h2>Listado de Ventas de Tiquetes Presencial</h2>
+      <ul id="ventas-presencial"></ul>
+    </div>
+  </div>
+
+  <script src="../js/gestionVTP.js"></script>
+</body>
+</html>

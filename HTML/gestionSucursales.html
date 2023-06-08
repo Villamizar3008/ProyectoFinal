@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gestión de Sucursales</title>
+  <link rel="stylesheet" href="../CSS/gestionSucursales.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <h1>Gestión de Sucursales</h1>
+
+  <div id="sucursal-form">
+    <h2>Agregar Sucursal</h2>
+    <form id="sucursal-form">
+      <label for="codigo">Código:</label>
+      <input type="text" id="codigo" required>
+
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" required>
+      <label for="barrio">Barrio:</label>
+      <input type="text" id="barrio" required>
+      <label for="departamento">Departamento:</label>
+      <select id="departamentos" name="departamentos">
+        <option value="amazonas">Amazonas</option>
+        <option value="antioquia">Antioquia</option>
+        <option value="arauca">Arauca</option>
+        <option value="atlantico">Atlántico</option>
+        <option value="bolivar">Bolívar</option>
+        <option value="boyaca">Boyacá</option>
+        <option value="caldas">Caldas</option>
+        <option value="caqueta">Caquetá</option>
+        <option value="casanare">Casanare</option>
+        <option value="cauca">Cauca</option>
+        <option value="cesar">Cesar</option>
+        <option value="choco">Chocó</option>
+        <option value="cordoba">Córdoba</option>
+        <option value="cundinamarca">Cundinamarca</option>
+        <option value="guainia">Guainía</option>
+        <option value="guaviare">Guaviare</option>
+        <option value="huila">Huila</option>
+        <option value="guajira">La Guajira</option>
+        <option value="magdalena">Magdalena</option>
+        <option value="meta">Meta</option>
+        <option value="narino">Nariño</option>
+        <option value="norte-de-santander">Norte de Santander</option>
+        <option value="putumayo">Putumayo</option>
+        <option value="quindio">Quindío</option>
+        <option value="risaralda">Risaralda</option>
+        <option value="san-andres">San Andrés y Providencia</option>
+        <option value="santander">Santander</option>
+        <option value="sucre">Sucre</option>
+        <option value="tolima">Tolima</option>
+        <option value="valle-del-cauca">Valle del Cauca</option>
+        <option value="vaupes">Vaupés</option>
+        <option value="vichada">Vichada</option>
+      </select><br>
+      <br>
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" required>
+
+      <label for="gerente">Gerente encargado:</label>
+      <input type="text" id="gerente" required>
+
+      <label for="salas">Número de salas:</label>
+      <select id="frecuencia" name="frecuencia">
+        <option value="seleccionar ">Seleccione la sala</option>
+        <option value="sala 1">sala 1</option>
+        <option value="sala 2">sala 2</option>
+        <option value="sala 3">sala 3</option>
+        <option value="sala 4">sala 4</option>
+        <option value="sala 5">sala 5</option>
+      </select><br>
+      <label for="trabajadores">Número de trabajadores:</label>
+      <input type="number" id="trabajadores" required>
+
+      <label for="cafeteria">Posee cafetería:</label>
+      <select id="cafeteria">
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <button type="submit">Agregar</button>
+      <button class="back-button" onclick="window.history.back()">Volver</button>
+
+    </form>
+  </div>
+
+  <div id="sucursal-list">
+    <h2>Listado de Sucursales</h2>
+    <ul id="sucursales"></ul>
+  </div>
+
+  <script src="../js/gestionarSucursales.js"></script>
+</body>
+
+</html>

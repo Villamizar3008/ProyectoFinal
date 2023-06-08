@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CINEFILOS DE CORAZÓN</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      width: 400px;
+      margin: 100px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .container h2 {
+      text-align: center;
+    }
+    
+    .container input[type="number"],
+    .container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    .container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    .container button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2><center><strong>Cinefilos De Corazón</strong></center></h2>
+    <form>
+      <input type="number" placeholder="Costo del tiquete" required>
+      <input type="number" placeholder="Número de tiquetes" required>
+      <input type="text" placeholder="Puestos deseados" required>
+      <select required>
+        <option value="">Forma de pago</option>
+        <option value="efectivo">Efectivo</option>
+        <option value="visa">Visa</option>
+        <option value="credito">Crédito</option>
+        <option value="debito">Débito</option>
+      </select>
+      <h4>Total a pagar: $ <span id="total">0.00</span></h4>
+      <button type="submit">Pagar</button>
+      <button class="back-button" onclick="window.history.back()">Volver</button>
+
+    </form>
+  </div>
+  
+  <script>
+    // Actualizar el total a pagar cuando se cambie el costo del tiquete o el número de tiquetes
+    document.querySelector('form').addEventListener('change', function() {
+      var costo = parseFloat(document.querySelector('input[type="number"][placeholder="Costo del tiquete"]').value);
+      var cantidad = parseInt(document.querySelector('input[type="number"][placeholder="Número de tiquetes"]').value);
+      var total = costo * cantidad;
+      document.getElementById('total').textContent = total.toFixed(2);
+    });
+  </script>
+</body>
+
+</html>

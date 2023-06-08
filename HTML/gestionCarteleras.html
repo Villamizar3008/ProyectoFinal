@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gestión de Carteleras</title>
+<link rel="stylesheet" href="../CSS/gestionCarteleras.css"></head>
+<body>
+  <h1>Gestión de Carteleras</h1>
+  
+  <div id="cartelera-form">
+    <h2>Agregar Cartelera</h2>
+    <form id="cartelera-form">
+      <label for="sala">Sala:</label>
+      <select id="pelicula" name="pelicula">
+        <option value="Sala 1">Sala 1</option>
+        <option value="Sala 2">Sala 2</option>
+        <option value="Sala 3">Sala 3</option>
+    </select><br><br>
+
+      <label for="horario">Horario:</label>
+      <input type="time" id="horario" required>
+
+      <label for="pelicula">Película:</label>
+      <input type="text" id="pelicula" required>
+
+      <label for="fecha-inicio">Fecha Inicio:</label>
+      <input type="date" id="fecha-inicio" required><br><br>
+
+      <label for="fecha-fin">Fecha Finalización:</label>
+      <input type="date" id="fecha-fin" required><br><br>
+
+      <button type="submit">Agregar</button>
+      <button class="back-button" onclick="window.history.back()">Volver</button>
+
+    </form>
+  </div>
+
+  <div id="cartelera-list">
+    <h2>Listado de Carteleras</h2>
+    <ul id="carteleras"></ul>
+  </div>
+
+  <script src="../js/gestionCarteleras.js"></script>
+</body>
+</html>

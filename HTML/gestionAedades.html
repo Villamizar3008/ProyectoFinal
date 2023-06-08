@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Análisis de Frecuencia por Edad</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../CSS/gestionAedades.css">
+</head>
+
+<body>
+    <h1>Análisis de Frecuencia por Edad</h1>
+    <label for="rango">Seleccione el rango:</label>
+    <select id="rango" onchange="generarGrafica()">
+        <option value="semanal">Semanal</option>
+        <option value="quincenal">Quincenal</option>
+        <option value="mensual">Mensual</option>
+    </select>
+    <canvas id="grafica"></canvas>
+
+    <script>
+        function generarGrafica() {
+            // Obtener la fecha actual
+            const fechaActual = new Date();
+
+            // Obtener la opción seleccionada por el usuario
+            const rango = document.getElementById('rango').value;
+
+            // Determinar el rango de fechas correspondiente según la opción seleccionada
+            let fechaInicio, fechaFin;
+            if (rango === 'semanal') {
+                fechaInicio = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), fechaActual.getDate() - fechaActual.getDay());
+                fechaFin = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), fechaInicio.getDate() + 6);
+            } else if (rango === 'quincenal') {
+                const quincena = fechaActual.getDate() <= 15 ? 1 : 2;
+                fechaInicio = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), quincena === 1 ? 1 : 16);
+                fechaFin = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), quincena === 1 ? 15 : new Date(fechaActual.getFullYear(), fechaActual.getMonth() + 1, 0).getDate());
+            } else if (rango === 'mensual') {
+                fechaInicio = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), 1);
+                fechaFin = new Date(fechaActual.getFullYear(), fechaActual.getMonth() + 1, 0);
+            }
+
+            // Consultar los datos de los visitantes en el rango de fechas seleccionado (aquí se debe implementar la lógica de obtención de datos)
+
+            // Ejemplo de datos de visitantes
+            const datosVisitantes = [
+                { edad: 'niños', cantidad: 10 },
+                { edad: 'adolescentes', cantidad: 15 },
+                { edad: 'adultos', cantidad: 25 },
+                { edad: 'adulto mayor', cantidad: 20 }
+            ];
+
+            // Calcular la frecuencia de visitantes en cada rango de edades dentro del rango de fechas seleccionado
+            const frecuencias = [];
+            for (const dato of datosVisitantes) {
+                frecuencias.push(dato.cantidad);
+            }
+
+            // Representar los datos en una gráfica de barras
+            const ctx = document.getElementById('grafica').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Niños', 'Adolescentes', 'Adultos', 'Adulto Mayor'],
+                    datasets: [{
+                        label: 'Frecuencia',
+                        data: frecuencias,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Generar la gráfica al cargar la página
+        generarGrafica();
+    </script>
+      <button class="back-button" onclick="window.history.back()">Volver</button>
+
+</body>
+
+</html>

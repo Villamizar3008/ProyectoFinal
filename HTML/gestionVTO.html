@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gestión de Ventas de Tiquetes en Línea</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/gestionVtiquetes.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Gestión de Ventas de Tiquetes en Línea</h1>
+
+    <div class="form-container">
+      <h2>Agregar Venta de Tiquetes en Línea</h2>
+      <form id="venta-online-form">
+        <div class="form-group">
+          <label for="sala-online">Sala:</label>
+          <input type="text" id="sala-online" required>
+        </div>
+
+        <div class="form-group">
+          <label for="horario-online">Horario:</label>
+          <input type="text" id="horario-online" required>
+        </div>
+
+        <div class="form-group">
+          <label for="numero-tiquetes-online">Número de Tiquetes:</label>
+          <input type="number" id="numero-tiquetes-online" required>
+        </div>
+
+        <div class="form-group">
+          <label for="posiciones-online">Posiciones:</label>
+          <button><a href="../html/esogerLugar.html" style="text-decoration: none;color: rgb(0, 0, 0);">Escoger
+              silla</a></button>
+        </div>
+
+        <div class="form-group">
+          <label for="forma-pago-online">Forma de Pago:</label>
+          <select id="frecuencia" name="frecuencia">
+            <option value="Forma de pago">Forma de pago</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Digital">Digital</option>
+          </select><br>
+        </div>
+
+        <div class="form-group">
+          <label for="cliente-online">Cliente:</label>
+          <input type="text" id="cliente-online" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fecha-venta-online">Fecha de Venta:</label>
+          <input type="date" id="fecha-venta-online" required>
+        </div>
+
+        <button type="submit">Agregar</button>
+        <button class="back-button" onclick="window.history.back()">Volver</button>
+
+      </form>
+    </div>
+
+    <div class="venta-list">
+      <h2>Listado de Ventas de Tiquetes en Línea</h2>
+      <ul id="ventas-online"></ul>
+    </div>
+  </div>
+
+
+  <script src="../js/gestionVTO.js"></script>
+</body>
+
+</html>
